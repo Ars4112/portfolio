@@ -6,32 +6,32 @@ import NotoSansCondensedRegularTTF from "../fonts/NotoSans_Condensed-Regular.ttf
 import NotoSansCondensedSemiBoldTTF from "../fonts/NotoSans_Condensed-SemiBold.ttf";
 import NotoSansCondensedSemiBoldWoff2 from "../fonts/NotoSansCondensed-SemiBold.woff2";
 
-
-
 export const GlobalStyles = createGlobalStyle`
 @font-face {
-  font-family: "DD";
+  font-family: "Dela Gothic One";
   font-style: normal;
   font-weight: 400;
-  src: url(${DelaGothicOneRegularWoff2})format("woff2"), url(${DelaGothicOneRegularTTF})format("woff2");
+  font-display: swap;
+  src: url(${DelaGothicOneRegularWoff2}) format("woff2"), url(${DelaGothicOneRegularTTF}) format("truetype");
 }
 
 @font-face {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans";
   font-style: normal;
   font-weight: 400;
-  src: url(${NotoSansCondensedRegularWoff2})format("woff2"), url(${NotoSansCondensedRegularTTF})format("woff2");
+  font-display: swap;
+  src: url(${NotoSansCondensedRegularWoff2}) format("woff2"), url(${NotoSansCondensedRegularTTF}) format("truetype");
 }
 
 @font-face {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans SemiBold";
   font-style: normal;
   font-weight: 600;
-  src: url(${NotoSansCondensedSemiBoldWoff2})format("woff2"), url(${NotoSansCondensedSemiBoldTTF})format("woff2");
+  font-display: swap;
+  src: url(${NotoSansCondensedSemiBoldWoff2}) format("woff2"), url(${NotoSansCondensedSemiBoldTTF}) format("truetype");
 }
 
-
-    *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -52,9 +52,12 @@ body {
 }
 
 body {
-  font-family: "DD";
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-size: 1.12rem;
+  line-height: 139%;
+  color: #272526;
+    
   width: 100%;
   height: 100%;
 }

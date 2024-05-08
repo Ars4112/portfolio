@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled from "styled-components";
 import { Container } from "./Container";
 
@@ -9,13 +9,13 @@ export function Header() {
 				<Nav>
 					<NavList>
 						<ListItem>
-							<a href="#">Проекты</a>
+							<a href="###">Проекты</a>
 						</ListItem>
 						<ListItem>
-							<a href="#">Обо мне</a>
+							<a href="###">Обо мне</a>
 						</ListItem>
 						<ListItem>
-							<a href="#">Контакты</a>
+							<a href="###">Контакты</a>
 						</ListItem>
 					</NavList>
 				</Nav>
