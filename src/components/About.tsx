@@ -54,16 +54,14 @@ const Wrapper = styled.div`
 	justify-content: space-between;
 
 	& h2 {
-		font-family: "Noto Sans", sans-serif;
 		font-weight: 600;
 		font-size: 20px;
 		line-height: 150%;
 	}
 
 	& p {
-		font-family: "Noto Sans", sans-serif;
 		font-weight: 400;
-		font-size: 60px;
+		font-size: min(60px, calc(48px + 12 * (100vw - 376px) / 1065));
 		line-height: 117%;
 		color: #a12a30;
 	}

@@ -12,21 +12,21 @@ export function Contacts() {
 			<ContactsContainer>
 				<h2>
 					<MainInscription>
-						<span>СВЯЗАТЬСЯ</span> СО МНОЙ
+						<span>СВЯЗАТЬСЯ</span> СО&nbsp;МНОЙ
 					</MainInscription>
 				</h2>
 				<List>
-					<ListItem>
-						<a href="##">+ 7 (952) 245-49-49</a>
+					<ListItem aria-label="по телефону">
+						<a href="tel: +79253647813">+ 7 (952) 245-49-49</a>
 					</ListItem>
-					<ListItem>
+					<ListItem aria-label="в телеграме">
 						<a href="##">@Ars4112</a>
 					</ListItem>
-					<ListItem>
-						<a href="##">ars4112@gmail.com</a>
+					<ListItem aria-label="по электронной почте">
+						<a href="email: ars4112@gmail.com">ars4112@gmail.com</a>
 					</ListItem>
-					<ListItem>
-						<a href="##">Ars4112</a>
+					<ListItem  aria-label="гитхаб">
+						<a href="https://github.com/Ars4112" target="_blank">Ars4112</a>
 					</ListItem>
 				</List>
 			</ContactsContainer>
@@ -63,7 +63,7 @@ const ListItem = styled.li`
 		font-weight: 600;
 		font-size: 18px;
 		line-height: 150%;
-        padding: 20px 20px 20px 45px;
+        padding: 5px 5px 5px 45px;
 		position: relative;
 	}
 

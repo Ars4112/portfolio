@@ -76,7 +76,6 @@ const ListItem = styled.li`
 	align-items: center;
 
 	& a {
-		font-family: "Noto Sans", sans-serif;
 		font-weight: 400;
 		font-size: 1rem;
 		padding: 20px;
@@ -100,7 +99,6 @@ const Group = styled.div`
 		border: none;
 		background-color: transparent;
 		padding: 20px;
-		font-family: "Noto Sans", sans-serif;
 		font-weight: 400;
 		font-size: 1.25rem;
 		color: #272526;

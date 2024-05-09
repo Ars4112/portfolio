@@ -13,7 +13,7 @@ export function MainSection() {
 				<TextWrapper>
 					<h1>
 						<MainInscription>
-							<span>ПРИВЕТ</span>, Я АРСЕНИЙ
+							<span>ПРИВЕТ</span>, Я&nbsp;АРСЕНИЙ
 						</MainInscription>
 					</h1>
 					<span>Frontend-разработчик из Санкт-Петербурга</span>
