@@ -79,7 +79,6 @@ const ListItem = styled.li`
 		font-family: "Noto Sans", sans-serif;
 		font-weight: 400;
 		font-size: 1rem;
-		color: #272526;
 		padding: 20px;
 		white-space: nowrap;
 	}

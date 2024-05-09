@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 @font-face {
-  font-family: "Noto Sans SemiBold";
+  font-family: "Noto Sans";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -57,7 +57,7 @@ body {
   font-size: 1.12rem;
   line-height: 139%;
   color: #272526;
-    
+  background-color: #dbba8f;
   width: 100%;
   height: 100%;
 }
@@ -68,8 +68,13 @@ ul {
   list-style: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
+  color: #272526;
 }
 
 img,
@@ -81,5 +86,9 @@ video {
 
 textarea {
   resize: none;
+}
+
+dl, dd, p {
+  margin: 0;
 }
 `;

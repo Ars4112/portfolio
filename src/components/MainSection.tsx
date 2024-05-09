@@ -11,9 +11,11 @@ export function MainSection() {
 		<Section>
 			<MainContainer>
 				<TextWrapper>
-					<MainInscription>
-						<span>ПРИВЕТ</span>, Я АРСЕНИЙ
-					</MainInscription>
+					<h1>
+						<MainInscription>
+							<span>ПРИВЕТ</span>, Я АРСЕНИЙ
+						</MainInscription>
+					</h1>
 					<span>Frontend-разработчик из Санкт-Петербурга</span>
 				</TextWrapper>
 			</MainContainer>
@@ -22,7 +24,6 @@ export function MainSection() {
 }
 
 const Section = styled.section`
-	background-color: #dbba8f;
 	height: 100%;
 	min-height: 100vh;
 	display: flex;
@@ -31,16 +32,27 @@ const Section = styled.section`
 
 const MainContainer = styled(Container)`
 	display: flex;
-	background: url(${mainPhoto}) no-repeat center/cover;
+	background-image: url(${mainPhoto});
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	min-height: 100vh;
 	height: 100%;
 
 	@media (min-resolution: 1dppx), (-webkit-min-device-pixel-ratio: 1) {
-		background: url(${mainPhotoWebp}) no-repeat center/cover;
+		/* background: url(${mainPhotoWebp}) no-repeat center/cover; */
+		background-image: url(${mainPhotoWebp});
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 	}
 
 	@media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
-		background: url(${mainPhotoWebp2x}) no-repeat center/cover;
+		/* background: url(${mainPhotoWebp2x}) no-repeat center/cover; */
+		background-image: url(${mainPhotoWebp2x});
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 	}
 `;
 
@@ -51,6 +63,10 @@ const TextWrapper = styled.div`
 	width: 100%;
 	gap: 20px;
 	padding-bottom: 40px;
+
+	& h1 {
+		text-align: center;
+	}
 
 	& > span {
 		font-family: "Noto Sans", sans-serif;
