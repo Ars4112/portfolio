@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { Container } from "./Container";
-import { Education } from "./Education";
 import photo from "../assets/img/photo-1.jpg";
 
 export function About() {
 	return (
-		<Section>
+		
 			<AboutContainer>
 				<img
 					src={photo}
@@ -21,22 +19,20 @@ export function About() {
 					</p>
 				</Wrapper>
 			</AboutContainer>
-			<Education />
-		</Section>
+		
 	);
 }
 
-const Section = styled.section`
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	gap: 84px;
-	padding: 40px 0;
-`;
+// const Section = styled.section`
+// 	display: flex;
+// 	align-items: center;
+	
+	
+// `;
 
-const AboutContainer = styled(Container)`
+const AboutContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(2, minmax(300px, 1fr));
 	grid-auto-rows: auto;
 	justify-content: space-between;
 	gap: 50px;
@@ -45,6 +41,10 @@ const AboutContainer = styled(Container)`
 		object-fit: contain;
 		width: 100%;
 	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;		
+	}
 `;
 
 const Wrapper = styled.div`
@@ -52,6 +52,7 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	justify-self: end;
 
 	& h2 {
 		font-weight: 600;
@@ -61,7 +62,7 @@ const Wrapper = styled.div`
 
 	& p {
 		font-weight: 400;
-		font-size: min(60px, calc(48px + 12 * (100vw - 376px) / 1065));
+		font-size: min(60px, calc(15px + 45 * (100vw - 376px) / 1065));
 		line-height: 117%;
 		color: #a12a30;
 	}

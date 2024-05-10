@@ -15,27 +15,40 @@ export function Education() {
 			<Wrapper>
 				<h2>Образование</h2>
 				<Table>
-					<tr>
-						<th>2021-2022 </th>
-					</tr>
-					<tr>
-						<td>HTML ACADEMY</td>
-						<td>“Профессия Frontend разработчик”</td>
-					</tr>
-					<tr>
-						<th>2023</th>
-					</tr>
-					<tr>
-						<td>Самостоятельное обучение</td>
-						<td>React и TypeScript</td>
-					</tr>
-					<tr>
-						<th>2024</th>
-					</tr>
-					<tr>
-						<td>IT-Kamasutra</td>
-						<td>“Frontend разработчик”</td>
-					</tr>
+					<thead>
+						<tr>
+							<th>2021-2022 </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>HTML ACADEMY</td>
+							<td>“Профессия Frontend разработчик”</td>
+						</tr>
+					</tbody>
+					<thead>
+						<tr>
+							<th>2023</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Самостоятельное обучение</td>
+							<td>React и TypeScript</td>
+						</tr>
+					</tbody>
+
+					<thead>
+						<tr>
+							<th>2024</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IT-Kamasutra</td>
+							<td>“Frontend разработчик”</td>
+						</tr>
+					</tbody>
 				</Table>
 				<p>
 					<span>
@@ -64,10 +77,10 @@ export function Education() {
 	);
 }
 
-const EducationContainer = styled(Container)`
+const EducationContainer = styled.div`
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(2, minmax(300px, 1fr));
 	grid-auto-rows: auto;
 	justify-content: space-between;
 	gap: 50px;
@@ -77,6 +90,15 @@ const EducationContainer = styled(Container)`
 		top: 100px;
 		object-fit: contain;
 		justify-self: self-end;
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+
+		& > img {
+			position: static;
+			width: 100%;
+		}
 	}
 `;
 
@@ -105,14 +127,14 @@ const Table = styled.table`
 	table-layout: fixed;
 
 	& tr:not(:first-of-type) th {
-		padding-top: 35px;
+		padding-top: min(35px, calc(15px + 20 * (100vw - 768px) / 672));
 	}
 
 	& td {
 		vertical-align: top;
 
 		&:first-child {
-			padding-right: 30px;
+			padding-right: min(30px, calc(10px + 20 * (100vw - 768px) / 672));
 		}
 	}
 	& th {

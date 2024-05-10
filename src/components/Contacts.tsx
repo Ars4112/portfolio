@@ -20,13 +20,13 @@ export function Contacts() {
 						<a href="tel: +79253647813">+ 7 (952) 245-49-49</a>
 					</ListItem>
 					<ListItem aria-label="в телеграме">
-						<a href="##">@Ars4112</a>
+						<a href="##" target="blank">@Ars4112</a>
 					</ListItem>
 					<ListItem aria-label="по электронной почте">
-						<a href="email: ars4112@gmail.com">ars4112@gmail.com</a>
+						<a href="mailto: ars4112@gmail.com">ars4112@gmail.com</a>
 					</ListItem>
 					<ListItem  aria-label="гитхаб">
-						<a href="https://github.com/Ars4112" target="_blank">Ars4112</a>
+						<a href="https://github.com/Ars4112" target="blank">Ars4112</a>
 					</ListItem>
 				</List>
 			</ContactsContainer>
@@ -37,16 +37,16 @@ export function Contacts() {
 const Section = styled.section`
 	display: flex;
 	justify-content: center;
-    padding: 75px 0;
+    padding: min(75px, calc(50px + 25 * (100vw - 768px) / 672)) 0;
 `;
 
 const ContactsContainer = styled(Container)`
 	display: flex;
 	flex-direction: column;
-	gap: 64px;
+	gap: min(64px, calc(40px + 24 * (100vw - 768px) / 672));
 
 	& h2 {
-		text-align: center;
+		text-align: start;
 	}
 `;
 

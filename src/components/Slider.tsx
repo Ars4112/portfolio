@@ -33,7 +33,7 @@ export function Slider() {
 }
 
 const SliderContainer = styled.div`
-	width: min(1440px, 100%);
+	width: 100%;
 	display: flex;
 	justify-content: center;
 `;
@@ -48,7 +48,6 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-	width: min(1160px, 100%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -61,13 +60,16 @@ const ItemWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr auto;
 	grid-template-rows: repeat(2, auto);
+	grid-auto-rows: auto;
 	gap: 40px 30px;
+	gap: min(40px, calc(25px + 15 * (100vw - 768px) / 672))
+		min(30px, calc(15px + 15 * (100vw - 768px) / 672));
 
 	& h3 {
 		font-weight: 600;
-		font-size: 4.38rem;
+		font-size: min(70px, calc(50px + 20 * (100vw - 768px) / 672));
 		line-height: 71%;
-    }
+	}
 
 	& dt {
 		font-weight: 600;
@@ -77,7 +79,16 @@ const ItemWrapper = styled.div`
 
 	& a {
 		grid-column: 3/4;
-		grid-row: 1 / span 2;
+		grid-row: 1/2;
 		align-self: self-start;
+
+		@media (max-width: 768px) {
+			align-self: flex-end;
+		}
+	}
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
 	}
 `;

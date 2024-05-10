@@ -99,9 +99,9 @@ const Section = styled.section`
 	justify-content: center;
 	background-color: #a12a30;
 	padding: 75px 0;
+	padding: min(75px, calc(50px + 25 * (100vw - 768px) / 672)) 0;
 
 	& h2 {
-		font-family: "Noto Sans", sans-serif;
 		font-weight: 400;
 		font-size: 2.5rem;
 		line-height: 125%;
@@ -114,6 +114,10 @@ const Section = styled.section`
 const List = styled.ul`
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
+
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 `;
 
 const ListItem = styled.li`

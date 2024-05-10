@@ -40,7 +40,6 @@ const MainContainer = styled(Container)`
 	height: 100%;
 
 	@media (min-resolution: 1dppx), (-webkit-min-device-pixel-ratio: 1) {
-		/* background: url(${mainPhotoWebp}) no-repeat center/cover; */
 		background-image: url(${mainPhotoWebp});
 		background-repeat: no-repeat;
 		background-position: center;
@@ -48,7 +47,6 @@ const MainContainer = styled(Container)`
 	}
 
 	@media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
-		/* background: url(${mainPhotoWebp2x}) no-repeat center/cover; */
 		background-image: url(${mainPhotoWebp2x});
 		background-repeat: no-repeat;
 		background-position: center;
@@ -69,8 +67,6 @@ const TextWrapper = styled.div`
 	}
 
 	& > span {
-		font-family: "Noto Sans", sans-serif;
-		font-weight: 400;
 		font-size: 1.25rem;
 		line-height: 125%;
 		color: #272526;

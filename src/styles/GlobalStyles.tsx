@@ -38,8 +38,6 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  /* font-size: calc(1vw / 1); */
-  /* font-size: min(16px, calc(1vw / 0.52)); */
   font-size: 16px;
 }
 
@@ -74,7 +72,7 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
   text-decoration: none;
-  color: #272526;
+  color: inherit;
 }
 
 img,
