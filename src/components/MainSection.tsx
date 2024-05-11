@@ -16,7 +16,9 @@ export function MainSection() {
 							<span>ПРИВЕТ</span>, Я&nbsp;АРСЕНИЙ
 						</MainInscription>
 					</h1>
-					<span>Frontend-разработчик из Санкт-Петербурга</span>
+					<span>
+						Frontend-разработчик <br /> из Санкт-Петербурга
+					</span>
 				</TextWrapper>
 			</MainContainer>
 		</Section>
@@ -67,9 +69,30 @@ const TextWrapper = styled.div`
 	}
 
 	& > span {
-		font-size: 1.25rem;
+		font-size: 24px;
 		line-height: 125%;
-		color: #272526;
 		text-align: end;
+		padding-right: min(162px, calc(70px + 92 * (100vw - 768px) / 672));
+
+		& br {
+			display: none;
+
+			@media (max-width: 375px) {
+				display: block;
+			}
+		}
+
+		@media (max-width: 768px) {
+			font-size: min(24px, calc(17px + 7 * (100vw - 375px) / 393));
+			text-align: center;
+			padding-right: 0;
+		}
+		@media (max-width: 375px) {
+			font-size: 17px;
+		}
+	}
+
+	@media (max-width: 375px) {
+		padding-bottom: 30px;
 	}
 `;

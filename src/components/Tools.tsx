@@ -84,7 +84,7 @@ export function Tools() {
 					{toolsListArray.map((i) => {
 						return (
 							<ListItem key={i.id} title={i.spriteId} aria-label={i.spriteId}>
-								<Icons size="80" spriteId={i.spriteId} />
+								<Icons size="90" spriteId={i.spriteId} />
 							</ListItem>
 						);
 					})}
@@ -98,45 +98,76 @@ const Section = styled.section`
 	display: flex;
 	justify-content: center;
 	background-color: #a12a30;
-	padding: 75px 0;
+	
 	padding: min(75px, calc(50px + 25 * (100vw - 768px) / 672)) 0;
 
 	& h2 {
 		font-weight: 400;
-		font-size: 2.5rem;
-		line-height: 125%;
+		font-size: min(40px, calc(30px + 20 * (100vw - 768px) / 672));
+		line-height: 34px;
+		letter-spacing: 5px;
 		color: #dbba8f;
 		margin: 0;
-		margin-bottom: 50px;
+		margin-bottom: min(45px, calc(30px + 15 * (100vw - 768px) / 672));
+
+		@media (max-width: 375px) {
+			text-align: center;
+			font-size: 20px;
+			letter-spacing: 2px;
+			margin-bottom: 8px;
+		}
 	}
+
+	@media (max-width: 375px) {
+		padding: 40px 0 51px;
+		}
 `;
 
 const List = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat(8, 1fr);
+	grid-auto-rows: auto;
+	justify-content: center;
 
 	@media (max-width: 768px) {
 		grid-template-columns: repeat(4, 1fr);
 	}
+
+	@media (max-width: 375px) {
+		grid-template-columns: repeat(4, minmax(50px, 80px));
+		}
 `;
 
 const ListItem = styled.li`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	aspect-ratio: 1/1;
 
-    @media (hover: hover) {
-        &:hover svg {
-            opacity: 0.7;
-            transform: scale(1.1);
-            transition: scale 0.3s;
-        }
-    }
+	& svg {
+		width: min(90px, calc(50px + 40 * (100vw - 768px) / 672));
+		height: min(90px, calc(50px + 40 * (100vw - 768px) / 672));
 
-    @media (hover: none) {
-        &:active {
-            opacity: 0.7;
-        }
-    }
+		@media (max-width: 768px) {
+			width: min(90px, calc(50px + 40 * (100vw - 375px) / 393));
+			height: min(90px, calc(50px + 40 * (100vw - 375px) / 393));
+		}
+	}
+
+	@media (max-width: 375px) {
+		aspect-ratio: 1/1;
+		}
+
+	@media (hover: hover) {
+		&:hover svg {
+			opacity: 0.7;
+			transform: scale(1.1);
+			transition: scale 0.3s;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			opacity: 0.7;
+		}
+	}
 `;

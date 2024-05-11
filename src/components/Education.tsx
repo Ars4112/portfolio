@@ -80,10 +80,9 @@ export function Education() {
 const EducationContainer = styled.div`
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(2, minmax(300px, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: auto;
 	justify-content: space-between;
-	gap: 50px;
 
 	& > img {
 		position: sticky;
@@ -94,6 +93,7 @@ const EducationContainer = styled.div`
 
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
+		gap: 40px;
 
 		& > img {
 			position: static;
@@ -106,13 +106,14 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 40px;
+	padding-left: min(145px, calc(70px + 75 * (100vw - 768px) / 672));
+	gap: 25px;
 
 	& h2 {
 		font-family: "Noto Sans", sans-serif;
 		font-weight: 600;
-		font-size: 20px;
-		line-height: 150%;
+		font-size: 24px;
+		line-height: 31px;
 	}
 
 	& p {
@@ -120,14 +121,18 @@ const Wrapper = styled.div`
 		flex-direction: column;
 		gap: 40px;
 	}
+
+	@media (max-width: 768px) {
+		padding-left: 0;
+	}
 `;
 
 const Table = styled.table`
 	text-align: left;
 	table-layout: fixed;
 
-	& tr:not(:first-of-type) th {
-		padding-top: min(35px, calc(15px + 20 * (100vw - 768px) / 672));
+	& thead:not(:first-of-type) th {
+		padding-top: min(10px, calc(5px + 5 * (100vw - 768px) / 672));
 	}
 
 	& td {

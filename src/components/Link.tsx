@@ -26,7 +26,7 @@ const LinkStyle = styled.a`
 		width: 8px;
 		height: 12px;
 		position: absolute;
-		top: 7px;
+		top: 0;
 		right: 10px;
         transition: right 0.3s;
 	}

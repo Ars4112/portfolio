@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Container } from "./Container";
 
 type propsType = {
@@ -8,49 +8,62 @@ type propsType = {
 
 export function Header() {
 	const [menuOpen, setMenuOpen] = useState<Boolean>(false);
-
 	const menuOpenOnClick = () => {
 		setMenuOpen(!menuOpen);
 	};
 	return (
-		<HeaderStyled menuOpen={menuOpen}>
-			<BurgerButton onClick={menuOpenOnClick} menuOpen={menuOpen}>
+		<>
+			<BurgerButton
+				onClick={menuOpenOnClick}
+				menuOpen={menuOpen}
+
+			>
 				<SpanHidden>{menuOpen ? "закрыть меню" : "открыть меню"}</SpanHidden>
 			</BurgerButton>
-			<ContainerHeader>
-				<Nav>
-					<NavList>
-						<ListItem>
-							<a href="###">Проекты</a>
-						</ListItem>
-						<ListItem>
-							<a href="###">Обо мне</a>
-						</ListItem>
-						<ListItem>
-							<a href="###">Контакты</a>
-						</ListItem>
-					</NavList>
-				</Nav>
-				<Group>
-					<ul>
-						<li>
-							<button>Ru</button>
-						</li>
-						<li>
-							<button>En</button>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<button>Light</button>
-						</li>
-						<li>
-							<button>Dark</button>
-						</li>
-					</ul>
-				</Group>
-			</ContainerHeader>
-		</HeaderStyled>
+			<HeaderStyled menuOpen={menuOpen}>
+				<ContainerHeader menuOpen={menuOpen}>
+					<Nav>
+						<NavList>
+							<ListItem>
+								<a href="###">Проекты</a>
+							</ListItem>
+							<ListItem>
+								<a href="###">Обо мне</a>
+							</ListItem>
+							<ListItem>
+								<a href="###">Контакты</a>
+							</ListItem>
+						</NavList>
+					</Nav>
+					<Group>
+						<ul>
+							<li>
+								<button>
+									<span>Ru</span>
+								</button>
+							</li>
+							<li>
+								<button>
+									<span>En</span>
+								</button>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<button>
+									<span>Light</span>
+								</button>
+							</li>
+							<li>
+								<button>
+									<span>Dark</span>
+								</button>
+							</li>
+						</ul>
+					</Group>
+				</ContainerHeader>
+			</HeaderStyled>
+		</>
 	);
 }
 
@@ -65,22 +78,38 @@ const HeaderStyled = styled.header<propsType>`
 	padding-top: min(50px, calc(20px + 30 * (100vw - 376px) / 1065));
 
 	@media (max-width: 768px) {
+		top: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
 		padding-top: 0;
 		height: ${({ menuOpen }) => (menuOpen ? "100vh" : "0")};
 		background-color: #dbba8f;
-		transition: height 2s;
+		transition: ${({ menuOpen }) =>
+			menuOpen
+				? "height 0.7s ease-in-out"
+				: "height 0.7s ease-in-out 1s, top 1s 1.5s"};
+
+		align-items: start;
+		padding-top: 40px;
 	}
 `;
 
-const ContainerHeader = styled(Container)`
+const ContainerHeader = styled(Container)<propsType>`
 	display: flex;
 	justify-content: space-between;
 	align-items: start;
 	gap: 50px;
+	
 
 	@media (max-width: 768px) {
-		position: absolute;
-		top: -100%;
+		
+		width: ${({ menuOpen }) => (menuOpen ? "100%" : "0")};
+		opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
+		transition: ${({ menuOpen }) =>
+			menuOpen
+				? "width 0.5s ease-in-out 1s, opacity 0.2s 1s"
+				: "width 0.5s ease-in-out, opacity 0.1s 0.4s"};
+		flex-direction: column-reverse;
+		gap: 20px;
+		overflow-y: hidden;
 	}
 `;
 
@@ -91,14 +120,16 @@ const BurgerButton = styled.button<propsType>`
 		border: none;
 		background-color: transparent;
 		position: absolute;
-		top: min(30px, calc(1px + 29 * (100vw - 375px) / 393));
+		top: 0;
 		cursor: pointer;
 		padding: 35px;
 		left: ${({ menuOpen }) =>
 			menuOpen
 				? "min(655px, calc(306px + 349 * (100vw - 375px) / 393))"
 				: "min(50px, calc(1px + 49 * (100vw - 375px) / 393))"};
-		transition: left 0.5s;
+		transition: ${({ menuOpen }) =>
+			menuOpen ? "left 0.5s 0.5s" : "left 0.5s 0.7s"};
+		z-index: 1;
 
 		&::before,
 		::after {
@@ -107,23 +138,24 @@ const BurgerButton = styled.button<propsType>`
 			height: 8px;
 			background-color: #a12a30;
 			position: absolute;
+			top: 50%;
 			left: 50%;
+			transition: ${({ menuOpen }) =>
+				menuOpen ? "all 0.5s 0.5s" : "all 0.5s 0.7s"};
 		}
 
 		&::before {
-			top: ${({ menuOpen }) => (menuOpen ? "50%" : "23px")};
 			transform: ${({ menuOpen }) =>
 				menuOpen
-					? "translate(-50%, -50%) rotate(45deg)"
-					: "translate(-50%,0) rotate(0)"};
+					? "translate(-50%, 0) rotate(45deg)"
+					: "translate(-50%,100%) rotate(0)"};
 		}
 
 		&::after {
-			bottom: ${({ menuOpen }) => (menuOpen ? "50%" : "23px")};
 			transform: ${({ menuOpen }) =>
 				menuOpen
-					? "translate(-50%,50%) rotate(-45deg)"
-					: "translate(-50%,0) rotate(0)"};
+					? "translate(-50%, 0) rotate(-45deg)"
+					: "translate(-50%,-100%) rotate(0)"};
 		}
 	}
 	@media (max-width: 375px) {
@@ -147,54 +179,102 @@ const SpanHidden = styled.span`
 `;
 
 const Nav = styled.nav`
-	height: 100%;
-
-	/* @media (max-width: 768px) {
-		display: none;
-	} */
+	padding-top: 15px;
+	flex-shrink: 1;
+	@media (max-width: 768px) {
+	}
 `;
 
 const NavList = styled.ul`
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: min(64px, calc(20px + 44 * (100vw - 768px) / 672));
+	flex-wrap: wrap;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: start;
+		gap: 30px;
+	}
 `;
 
 const ListItem = styled.li`
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: #dbba8f;
+	border-radius: 10px;
 
 	& a {
 		font-weight: 400;
-		font-size: 1rem;
-		padding: 20px;
+		font-size: 16px;
+		padding: 20px 0;
 		white-space: nowrap;
+
+		@media (max-width: 768px) {
+		font-size: 18px;
+		padding: 20px 9px;
+	}
 	}
 `;
 
 const Group = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
+	
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
+	justify-content: end;
+	justify-items: end;
+	width: 100%;
+	max-width: 350px;
+	
+	flex-shrink: 2;
+	gap: 25px;
 
 	& > ul {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		gap: 25px;
+
+		& li {
+			position: relative;
+			font-weight: 400;
+			font-size: 20px;
+		}
+
+		& li:not(:first-child)::before {
+			content: "";
+			width: 1px;
+			height: 1.5em;
+			background-color: #272526;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -13px;
+		}
 	}
 
 	& button {
 		border: none;
 		background-color: transparent;
-		padding: 20px;
-		font-weight: 400;
-		font-size: 1.25rem;
-		color: #272526;
+		padding: 23px 6px;
+		font-size: 1em;
+		cursor: pointer;
+
+		& span {
+			background-color: #dbba8f;
+			border-radius: 10px;
+			padding: 5px;
+		}
+
+		@media (max-width: 768px) {
+			padding: 15px 6px;
+	}
 	}
 
-	/* @media (max-width: 768px) {
-		display: none;
-	} */
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+        gap: 10px;
+		& > ul {
+		}
+	}
 `;

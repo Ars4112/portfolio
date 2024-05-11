@@ -19,12 +19,13 @@ export function Slider() {
 							<dt>Функционал:</dt>
 							<dd>
 								Загрузка фотографий, рандомный показ публикаций, генерация
-								рандомного числа лайков и комментариев + подгрузка этого числа
-								комментариев в публикации, наложение фильтров на фотографию,
-								валидация формы, добавление новых комментариев под фото.
+								рандомного числа лайков и&nbsp;комментариев + подгрузка этого
+								числа комментариев в&nbsp;публикации, наложение фильтров
+								на&nbsp;фотографию, валидация формы, добавление новых
+								комментариев под фото.
 							</dd>
 						</dl>
-						<Link href={"#"}>github</Link>
+						<Link href={"#"}>GitHub</Link>
 					</ItemWrapper>
 				</Item>
 			</List>
@@ -55,32 +56,47 @@ const Item = styled.li`
 `;
 
 const ItemWrapper = styled.div`
-	font-family: "Noto Sans", sans-serif;
-	color: #272526;
 	display: grid;
-	grid-template-columns: 1fr 1fr auto;
+	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(2, auto);
 	grid-auto-rows: auto;
 	gap: 40px 30px;
 	gap: min(40px, calc(25px + 15 * (100vw - 768px) / 672))
-		min(30px, calc(15px + 15 * (100vw - 768px) / 672));
+		min(36px, calc(20px + 16 * (100vw - 768px) / 672));
 
 	& h3 {
 		font-weight: 600;
 		font-size: min(70px, calc(50px + 20 * (100vw - 768px) / 672));
 		line-height: 71%;
+		letter-spacing: 8px;
+	}
+
+	& p {
+		grid-column: 3 / span 3;
+	}
+
+	& dl:first-of-type dd {
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	& dl:last-of-type {
+		grid-column: 3 / span 3;
 	}
 
 	& dt {
 		font-weight: 600;
 		font-size: 1.25rem;
 		line-height: 150%;
+		margin-bottom: min(18px, calc(10px + 8 * (100vw - 768px) / 672));
 	}
 
 	& a {
-		grid-column: 3/4;
+		grid-column: 6/7;
 		grid-row: 1/2;
 		align-self: self-start;
+
+		line-height: 10px;
 
 		@media (max-width: 768px) {
 			align-self: flex-end;
