@@ -4,6 +4,7 @@ import { MainSection } from "./components/MainSection";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { Tools } from "./components/Tools";
 import { Projects } from "./components/Projects";
+import { About } from "./components/About";
 import { Contacts } from "./components/Contacts";
 
 export function App() {
@@ -16,6 +17,7 @@ export function App() {
 					<MainSection />
 					<Tools />
 					<Projects />
+					<About />
 					<Contacts/>
 				</main>
 				<footer>

@@ -56,6 +56,11 @@ const List = styled.ul`
 	flex-wrap: wrap;
 	gap: 10px;
 	width: 100%;
+
+	@media (max-width: 375px) {
+		flex-direction: column;
+		
+	}
 `;
 
 const ListItem = styled.li`

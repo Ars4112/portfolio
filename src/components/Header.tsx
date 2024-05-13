@@ -75,7 +75,7 @@ const HeaderStyled = styled.header<propsType>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: min(50px, calc(20px + 30 * (100vw - 376px) / 1065));
+	padding-top: min(30px, calc(10px + 20 * (100vw - 376px) / 1065));
 
 	@media (max-width: 768px) {
 		top: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
@@ -109,7 +109,7 @@ const ContainerHeader = styled(Container)<propsType>`
 				: "width 0.5s ease-in-out, opacity 0.1s 0.4s"};
 		flex-direction: column-reverse;
 		gap: 20px;
-		overflow-y: hidden;
+		overflow-x: hidden;
 	}
 `;
 
@@ -201,11 +201,11 @@ const NavList = styled.ul`
 const ListItem = styled.li`
 	background-color: #dbba8f;
 	border-radius: 10px;
+	padding: 5px;
 
 	& a {
-		font-weight: 400;
-		font-size: 16px;
-		padding: 20px 0;
+		font-size: 1rem;
+		padding: 1.25rem 0;
 		white-space: nowrap;
 
 		@media (max-width: 768px) {
@@ -218,25 +218,21 @@ const ListItem = styled.li`
 const Group = styled.div`
 	
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
+	grid-template-columns: repeat(2, auto);
 	justify-content: end;
 	justify-items: end;
-	width: 100%;
-	max-width: 350px;
 	
-	flex-shrink: 2;
-	gap: 25px;
+	gap: 1.56rem;
 
 	& > ul {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 25px;
+		gap: 1.56rem;
 
 		& li {
 			position: relative;
-			font-weight: 400;
-			font-size: 20px;
+			font-size: 1.25rem;
 		}
 
 		& li:not(:first-child)::before {

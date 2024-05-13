@@ -61,8 +61,8 @@ const TextWrapper = styled.div`
 	flex-direction: column;
 	align-self: flex-end;
 	width: 100%;
-	gap: 20px;
-	padding-bottom: 40px;
+	gap: 1.25rem;
+	padding-bottom: 2.5rem;
 
 	& h1 {
 		text-align: center;

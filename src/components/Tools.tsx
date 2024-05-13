@@ -142,6 +142,7 @@ const ListItem = styled.li`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	aspect-ratio: 1/1;
 
 	& svg {
 		width: min(90px, calc(50px + 40 * (100vw - 768px) / 672));
@@ -152,6 +153,10 @@ const ListItem = styled.li`
 			height: min(90px, calc(50px + 40 * (100vw - 375px) / 393));
 		}
 	}
+
+	@media (max-width: 768px) {
+		aspect-ratio: none;
+		}
 
 	@media (max-width: 375px) {
 		aspect-ratio: 1/1;

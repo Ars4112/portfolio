@@ -38,7 +38,15 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-size: 16px;
+  font-size: min(16px, calc(10px + 6 * (100vw - 768px) / 672));
+
+  @media (max-width: 768px) {
+    font-size: min(16px, calc(10px + 6 * (100vw - 375px) / 393));
+	}
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+	}
 }
 
 html,

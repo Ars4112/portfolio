@@ -14,8 +14,9 @@ const LinkStyle = styled.a`
 	position: relative;
 	font-weight: 600;
 	font-size: 1.12rem;
-	line-height: 150%;
-    padding: 0 40px 20px 20px;
+	line-height: 10px;
+    padding: 0.625rem 2.5rem 0.625rem 0.625rem;
+	text-align: end;
 
 	&::after {
 		content: "";
@@ -26,26 +27,21 @@ const LinkStyle = styled.a`
 		width: 8px;
 		height: 12px;
 		position: absolute;
-		top: 0;
+		top: 50%;
 		right: 10px;
+		transform: translateY(-50%);
         transition: right 0.3s;
 	}
 
 	@media (hover: hover) {
 		&:hover::after {
 			right: 0;
-			background-size: 10px;
-			width: 10px;
-			height: 17px;
 		}
 	}
 
 	@media (hover: none) {
 		&:active::after {
             right: 0;
-			background-size: 10px;
-			width: 10px;
-			height: 17px;
 		}
 	}
 `;

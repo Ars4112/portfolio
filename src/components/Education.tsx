@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "./Container";
+
 import photo from "../assets/img/photo-2.jpg";
 
 export function Education() {
@@ -13,7 +13,7 @@ export function Education() {
 			/>
 
 			<Wrapper>
-				<h2>Образование</h2>
+				<h3>Образование</h3>
 				<Table>
 					<thead>
 						<tr>
@@ -93,7 +93,7 @@ const EducationContainer = styled.div`
 
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 2.5rem;
 
 		& > img {
 			position: static;
@@ -106,20 +106,19 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding-left: min(145px, calc(70px + 75 * (100vw - 768px) / 672));
-	gap: 25px;
+	padding-left: 9.06rem;
+	gap: 1.56rem;
 
-	& h2 {
-		font-family: "Noto Sans", sans-serif;
+	& > p {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	& h3 {
 		font-weight: 600;
 		font-size: 24px;
 		line-height: 31px;
-	}
-
-	& p {
-		display: flex;
-		flex-direction: column;
-		gap: 40px;
 	}
 
 	@media (max-width: 768px) {
