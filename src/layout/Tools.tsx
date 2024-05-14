@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { Container } from "./Container";
-import { Icons } from "./Icons";
+import { Container } from "../components/Container";
+import { Icons } from "../components/Icons";
+import { SpanHidden } from "../components/SpanHidden";
 
 type toolsArrayType = {
 	id: number;
@@ -83,7 +84,8 @@ export function Tools() {
 				<List>
 					{toolsListArray.map((i) => {
 						return (
-							<ListItem key={i.id} title={i.spriteId} aria-label={i.spriteId}>
+							<ListItem key={i.id} title={i.spriteId}>
+								<SpanHidden>{i.spriteId}</SpanHidden>
 								<Icons size="90" spriteId={i.spriteId} />
 							</ListItem>
 						);
@@ -98,7 +100,7 @@ const Section = styled.section`
 	display: flex;
 	justify-content: center;
 	background-color: #a12a30;
-	
+
 	padding: min(75px, calc(50px + 25 * (100vw - 768px) / 672)) 0;
 
 	& h2 {
@@ -120,14 +122,13 @@ const Section = styled.section`
 
 	@media (max-width: 375px) {
 		padding: 40px 0 51px;
-		}
+	}
 `;
 
 const List = styled.ul`
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	grid-auto-rows: auto;
-	justify-content: center;
 
 	@media (max-width: 768px) {
 		grid-template-columns: repeat(4, 1fr);
@@ -135,7 +136,7 @@ const List = styled.ul`
 
 	@media (max-width: 375px) {
 		grid-template-columns: repeat(4, minmax(50px, 80px));
-		}
+	}
 `;
 
 const ListItem = styled.li`
@@ -145,8 +146,8 @@ const ListItem = styled.li`
 	aspect-ratio: 1/1;
 
 	& svg {
-		width: min(90px, calc(50px + 40 * (100vw - 768px) / 672));
-		height: min(90px, calc(50px + 40 * (100vw - 768px) / 672));
+		width: 5.625rem;
+		height: 5.625rem;
 
 		@media (max-width: 768px) {
 			width: min(90px, calc(50px + 40 * (100vw - 375px) / 393));
@@ -155,12 +156,12 @@ const ListItem = styled.li`
 	}
 
 	@media (max-width: 768px) {
-		aspect-ratio: none;
-		}
+		aspect-ratio: 1/1;
+	}
 
 	@media (max-width: 375px) {
 		aspect-ratio: 1/1;
-		}
+	}
 
 	@media (hover: hover) {
 		&:hover svg {

@@ -6,7 +6,7 @@ import NotoSansCondensedRegularTTF from "../fonts/NotoSans_Condensed-Regular.ttf
 import NotoSansCondensedSemiBoldTTF from "../fonts/NotoSans_Condensed-SemiBold.ttf";
 import NotoSansCondensedSemiBoldWoff2 from "../fonts/NotoSansCondensed-SemiBold.woff2";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{menuOpen: boolean}>`
 @font-face {
   font-family: "Dela Gothic One";
   font-style: normal;
@@ -67,6 +67,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow-y: ${(props)=> props.menuOpen ? "hidden" : "none"};
 }
 
 ul {

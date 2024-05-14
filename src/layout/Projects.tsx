@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import { MainInscription } from "./MainInscription";
-import { Container } from "./Container";
+import { MainInscription } from "../components/MainInscription";
+import { Container } from "../components/Container";
 import { Slider } from "./Slider";
 
-
-import { Link } from "./Link";
+import { Link } from "../components/Link";
 
 export function Projects() {
 	return (
-		<Section>
+		<Section id="projects">
 			<SectionContainer>
 				<TitleWrapper>
 					<h2>
@@ -61,8 +60,8 @@ const TitleWrapper = styled.div`
 		flex-shrink: 0;
 
 		@media (max-width: 768px) {
-		margin-left: auto;
-	}
+			margin-left: auto;
+		}
 	}
 
 	@media (max-width: 768px) {

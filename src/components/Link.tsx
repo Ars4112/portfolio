@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import arrow from "../assets/img/svg/arrow-link.svg";
+import sprite from "../assets/img/svg/sprite.svg";
 
 type PropsType = {
 	children: React.ReactNode;
@@ -7,41 +7,45 @@ type PropsType = {
 };
 
 export function Link(props: PropsType) {
-	return <LinkStyle href={props.href}>{props.children}</LinkStyle>;
+	return (
+		<LinkStyle href={props.href}>
+			{props.children}
+			<svg width={"6"} height={"11"} viewBox="0 0 6 11">
+				<use xlinkHref={`${sprite}#arrow`} />
+			</svg>
+		</LinkStyle>
+	);
 }
 
 const LinkStyle = styled.a`
-	position: relative;
 	font-weight: 600;
 	font-size: 1.12rem;
 	line-height: 10px;
-    padding: 0.625rem 2.5rem 0.625rem 0.625rem;
+	padding: 0.625rem 1.5rem 0.625rem 0.625rem;
 	text-align: end;
-
-	&::after {
-		content: "";
-		background-image: url(${arrow});
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 6px;
-		width: 8px;
-		height: 12px;
-		position: absolute;
-		top: 50%;
-		right: 10px;
-		transform: translateY(-50%);
-        transition: right 0.3s;
+	color: inherit;
+	transition: color 0.5s;
+	& svg {
+		transform: translateX(10px) scale(1);
+		transition: transform 0.5s;
 	}
 
 	@media (hover: hover) {
-		&:hover::after {
-			right: 0;
+		&:hover {
+			color: #a12a30;
+
+			& svg {
+				transform: translateX(20px) scale(1.1);
+			}
 		}
 	}
-
 	@media (hover: none) {
-		&:active::after {
-            right: 0;
+		&:active {
+			color: #a12a30;
+
+			& svg {
+				transform: translateX(20px) scale(1.1);
+			}
 		}
 	}
 `;

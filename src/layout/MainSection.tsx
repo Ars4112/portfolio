@@ -1,24 +1,24 @@
-import React from "react";
+
 import styled from "styled-components";
-import { Container } from "./Container";
+import { Container } from "../components/Container";
 import mainPhoto from "../assets/img/photo-main.png";
 import mainPhotoWebp2x from "../assets/img/photo-main_2x.webp";
 import mainPhotoWebp from "../assets/img/photo-main.webp";
-import { MainInscription } from "./MainInscription";
+import { MainInscription } from "../components/MainInscription";
 
 export function MainSection() {
 	return (
 		<Section>
 			<MainContainer>
 				<TextWrapper>
-					<h1>
+					<span>
 						<MainInscription>
 							<span>ПРИВЕТ</span>, Я&nbsp;АРСЕНИЙ
 						</MainInscription>
-					</h1>
-					<span>
-						Frontend-разработчик <br /> из Санкт-Петербурга
 					</span>
+					<h1>
+						Frontend-разработчик <br /> из Санкт-Петербурга
+					</h1>
 				</TextWrapper>
 			</MainContainer>
 		</Section>
@@ -64,12 +64,12 @@ const TextWrapper = styled.div`
 	gap: 1.25rem;
 	padding-bottom: 2.5rem;
 
-	& h1 {
+	& span {
 		text-align: center;
 	}
 
-	& > span {
-		font-size: 24px;
+	& > h1 {
+		font-size: 1.25rem;
 		line-height: 125%;
 		text-align: end;
 		padding-right: min(162px, calc(70px + 92 * (100vw - 768px) / 672));

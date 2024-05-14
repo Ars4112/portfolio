@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "./Link";
+import { Link } from "../components/Link";
 import keksogram from "../assets/img/slider/keksogram.jpg";
 import keksogramWebp2 from "../assets/img/slider/keksogram_2x.webp";
 import keksogramWebp from "../assets/img/slider/keksogram.webp";

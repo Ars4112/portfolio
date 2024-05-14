@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Education } from "./Education";
-import { Container } from "./Container";
+import { Container } from "../components/Container";
 import photo from "../assets/img/photo-1.jpg";
+import { Element } from "react-scroll";
 
 export function About() {
 	return (
-		<Section>
+		<Section id="about">
 			<Container>
 				<AboutContainer>
 					<picture>
