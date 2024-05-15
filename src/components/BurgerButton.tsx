@@ -15,7 +15,7 @@ export function BurgerButton(props: BurgerButtonPropsType) {
 		props.setMenuOpen(!props.menuOpen);
 	};
 	return (
-		<BurgerMenu onClick={menuOpenOnClick} menuOpen={props.menuOpen}>
+		<BurgerMenu onClick={menuOpenOnClick} menuOpen={props.menuOpen} tabIndex={1}>
 			<SpanHidden>{props.menuOpen ? "закрыть меню" : "открыть меню"}</SpanHidden>
 		</BurgerMenu>
 	);
@@ -38,7 +38,8 @@ const BurgerMenu = styled.button<StylePropsType>`
 				: "min(50px, calc(1px + 49 * (100vw - 375px) / 393))"};
 		transition: ${({ menuOpen }) =>
 			menuOpen ? "left 0.5s 0.5s" : "left 0.5s 0.7s"};
-		z-index: 1;
+		z-index: 10;
+       
        
 
 		&::before,

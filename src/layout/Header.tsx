@@ -1,11 +1,9 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { Container } from "../components/Container";
 import { SwitchGroup } from "../components/switch/SwitchGroup";
 import { Nav } from "../components/Nav";
 
 export function Header() {
-	
 	return (
 		<>
 			<HeaderStyled>
@@ -27,8 +25,6 @@ const HeaderStyled = styled.header`
 	justify-content: center;
 	align-items: center;
 	padding-top: min(30px, calc(10px + 20 * (100vw - 376px) / 1065));
-
-	
 `;
 
 const ContainerHeader = styled(Container)`
@@ -40,6 +36,4 @@ const ContainerHeader = styled(Container)`
 	@media (max-width: 768px) {
 		display: none;
 	}
-
-	
 `;

@@ -5,7 +5,7 @@ import { Container } from "./Container";
 
 export function MenuMobile(props: { menuOpen: boolean }) {
 	return (
-		<MenuStyle menuOpen={props.menuOpen}>
+		<MenuStyle  id="menuMobile" menuOpen={props.menuOpen}>
 			<Container>
 				<SwitchGroup />
 				<Nav />
@@ -21,6 +21,7 @@ const MenuStyle = styled.div<{ menuOpen: boolean }>`
 		position: fixed;
 		left: 0;
 		right: 0;
+        z-index: 1;
 		height: 100vh;
 		background-color: #dbba8f;
 		padding-top: 3.25rem;

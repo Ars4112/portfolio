@@ -1,22 +1,31 @@
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import { useRef } from "react";
 import styled from "styled-components";
 
 export function Nav() {
+	const anchorLink = useRef<HTMLAnchorElement>(null);
+
+	const addSmoothScroll = (evt: React.MouseEvent<HTMLAnchorElement>) => {
+		evt.preventDefault();
+console.log(anchorLink.current);
+
+		anchorLink.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+	};
 	return (
 		<NavStyle>
 			<NavList>
 				<ListItem>
-					<NavLink to="projects" smooth={true} tabIndex={0}>
+					<NavLink href="#projects" ref={anchorLink} onClick={addSmoothScroll}>
 						Проекты
 					</NavLink>
 				</ListItem>
 				<ListItem>
-					<NavLink to="about" smooth={true} tabIndex={0}>
+					<NavLink href="#about" ref={anchorLink} onClick={addSmoothScroll}>
 						Обо мне
 					</NavLink>
 				</ListItem>
 				<ListItem>
-					<NavLink to="contacts" smooth={true} tabIndex={0}>
+					<NavLink href="#contacts" ref={anchorLink} onClick={addSmoothScroll}>
 						Контакты
 					</NavLink>
 				</ListItem>
@@ -51,7 +60,7 @@ const ListItem = styled.li`
 	padding: 5px;
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
 	font-size: 1rem;
 	padding: 1.25rem 0;
 	white-space: nowrap;
