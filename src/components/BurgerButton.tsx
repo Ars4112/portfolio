@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SpanHidden } from "./SpanHidden";
+import { Fade, Slide } from "react-awesome-reveal";
 
 type BurgerButtonPropsType = {
 	setMenuOpen: (menuOpen: boolean) => void;
@@ -16,20 +17,30 @@ export function BurgerButton(props: BurgerButtonPropsType) {
 		window.scrollTo({ top: 0 });
 	};
 	return (
-		<BurgerMenu
-			onClick={menuOpenOnClick}
-			menuOpen={props.menuOpen}
-			tabIndex={1}
-		>
-			<SpanHidden>
-				{props.menuOpen ? "закрыть меню" : "открыть меню"}
-			</SpanHidden>
-		</BurgerMenu>
+		<ButtonWrapper>
+			<BurgerMenu
+				onClick={menuOpenOnClick}
+				menuOpen={props.menuOpen}
+				tabIndex={1}
+			>
+				<SpanHidden>
+					{props.menuOpen ? "закрыть меню" : "открыть меню"}
+				</SpanHidden>
+			</BurgerMenu>
+		</ButtonWrapper>
 	);
 }
 
-const BurgerMenu = styled.button<StylePropsType>`
+const ButtonWrapper = styled(Slide)`
 	display: none;
+	@media (max-width: 768px) {
+		display: block;
+		position: relative;
+		z-index: 10;
+	}
+`;
+
+const BurgerMenu = styled.button<StylePropsType>`
 	@media (max-width: 768px) {
 		display: block;
 		border: none;
@@ -74,9 +85,4 @@ const BurgerMenu = styled.button<StylePropsType>`
 					: "translate(-50%,-100%) rotate(0)"};
 		}
 	}
-	/* @media (max-width: 375px) {
-		top: 0;
-		left: ${({ menuOpen }) =>
-		menuOpen ? "min(306px, calc(200px + 106 * (100vw - 200px) / 175))" : "0"};
-	} */
 `;

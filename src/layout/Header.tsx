@@ -2,16 +2,19 @@ import styled from "styled-components";
 import { Container } from "../components/Container";
 import { SwitchGroup } from "../components/switch/SwitchGroup";
 import { Nav } from "../components/Nav";
+import { Fade } from "react-awesome-reveal";
 
 export function Header() {
 	return (
 		<>
-			<HeaderStyled>
-				<ContainerHeader>
-					<Nav />
-					<SwitchGroup />
-				</ContainerHeader>
-			</HeaderStyled>
+			<Fade triggerOnce delay={500}>
+				<HeaderStyled>
+					<ContainerHeader>
+						<Nav />
+						<SwitchGroup />
+					</ContainerHeader>
+				</HeaderStyled>
+			</Fade>
 		</>
 	);
 }

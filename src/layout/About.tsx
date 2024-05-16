@@ -2,30 +2,35 @@ import styled from "styled-components";
 import { Education } from "./Education";
 import { Container } from "../components/Container";
 import photo from "../assets/img/photo-1.jpg";
-import { Element } from "react-scroll";
+import { Slide, Fade } from "react-awesome-reveal";
 
 export function About() {
 	return (
 		<Section id="about">
 			<Container>
 				<AboutContainer>
-					<picture>
-						<img
-							src={photo}
-							alt="Еду в метро на эскалаторе и смотрю вверх"
-							width={"580"}
-							height={"544"}
-							loading="lazy"
-						/>
-					</picture>
-
-					<Wrapper>
-						<h3>Обо мне</h3>
-						<TextStyle>
-							Искал себя во&nbsp;многих профессиях. И&nbsp;нашел&nbsp;&mdash;
-							в&nbsp;разработке.
-						</TextStyle>
-					</Wrapper>
+					<Slide triggerOnce>
+						<picture>
+							<img
+								src={photo}
+								alt="Еду в метро на эскалаторе и смотрю вверх"
+								width={"580"}
+								height={"544"}
+								loading="lazy"
+							/>
+						</picture>
+					</Slide>
+					<Slide triggerOnce direction="right">
+						<Wrapper>
+							<h3>Обо мне</h3>
+							<Fade delay={700} triggerOnce>
+								<TextStyle>
+									Искал себя во&nbsp;многих профессиях.
+									И&nbsp;нашел&nbsp;&mdash; в&nbsp;разработке.
+								</TextStyle>
+							</Fade>
+						</Wrapper>
+					</Slide>
 				</AboutContainer>
 				<Education />
 			</Container>
@@ -56,7 +61,7 @@ const AboutContainer = styled.div`
 	justify-content: space-between;
 	padding-top: 1.5rem;
 
-	& > img {
+	& img {
 		object-fit: contain;
 		width: 36.25rem;
 
@@ -77,6 +82,8 @@ const Wrapper = styled.div`
 	padding-left: 9.06rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 
 	& > h3 {
 		font-weight: 600;
@@ -94,17 +101,14 @@ const TextStyle = styled.p`
 	font-size: 3.75rem;
 	line-height: 4.375rem;
 	color: #a12a30;
-	margin-top: auto;
 
 	@media (max-width: 768px) {
 		font-size: 3rem;
 		line-height: 3.5rem;
-		margin: 0;
 	}
 
 	@media (max-width: 375px) {
 		font-size: 2.5rem;
 		line-height: 2.75rem;
-		margin: 0;
 	}
 `;

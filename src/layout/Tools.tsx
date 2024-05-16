@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Container } from "../components/Container";
 import { Icons } from "../components/Icons";
 import { SpanHidden } from "../components/SpanHidden";
+import { Fade } from "react-awesome-reveal";
 
 type toolsArrayType = {
 	id: number;
@@ -80,14 +81,18 @@ export function Tools() {
 	return (
 		<Section>
 			<Container>
-				<h2>Технологии и инструменты</h2>
+				<Fade direction="left" triggerOnce>
+					<h2>Технологии и инструменты</h2>
+				</Fade>
 				<List>
-					{toolsListArray.map((i) => {
+					{toolsListArray.map((i, index) => {
 						return (
-							<ListItem key={i.id} title={i.spriteId}>
-								<SpanHidden>{i.spriteId}</SpanHidden>
-								<Icons size="90" spriteId={i.spriteId} />
-							</ListItem>
+							<Fade cascade delay={index * 60} fraction={1} triggerOnce>
+								<ListItem key={i.id} title={i.spriteId}>
+									<SpanHidden>{i.spriteId}</SpanHidden>
+									<Icons size="90" spriteId={i.spriteId} />
+								</ListItem>
+							</Fade>
 						);
 					})}
 				</List>

@@ -2,20 +2,24 @@ import styled from "styled-components";
 import { MainInscription } from "../components/MainInscription";
 import { Container } from "../components/Container";
 import { Slider } from "./Slider";
-
 import { Link } from "../components/Link";
+import { Fade } from "react-awesome-reveal";
 
 export function Projects() {
 	return (
 		<Section id="projects">
 			<SectionContainer>
 				<TitleWrapper>
-					<h2>
-						<MainInscription>
-							МОИ <span>ПРОЕКТЫ</span>
-						</MainInscription>
-					</h2>
-					<Link href="#">Смотреть все</Link>
+					<Fade direction="left" triggerOnce>
+						<h2>
+							<MainInscription>
+								МОИ <span>ПРОЕКТЫ</span>
+							</MainInscription>
+						</h2>
+					</Fade>
+					<Fade direction="right" triggerOnce>
+						<Link href="#">Смотреть все</Link>
+					</Fade>
 				</TitleWrapper>
 				<Slider />
 			</SectionContainer>
@@ -37,7 +41,6 @@ const SectionContainer = styled(Container)`
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	/* gap: min(84px, calc(30px + 54 * (100vw - 375px) / 1065)); */
 	gap: 5.25rem;
 
 	& h2 {
@@ -56,11 +59,11 @@ const TitleWrapper = styled.div`
 	gap: 1.25rem;
 	width: 100%;
 
-	& a {
+	& div:last-child {
 		flex-shrink: 0;
 
 		@media (max-width: 768px) {
-			margin-left: auto;
+			align-self: flex-end;
 		}
 	}
 

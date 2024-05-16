@@ -8,54 +8,60 @@ import keksogramJpgMobile from "../assets/img/slider/keksogram-mobile.jpg";
 import keksogramJpg2Mobile from "../assets/img/slider/keksogram-mobile@2x.jpg";
 import keksogramWebpMobile from "../assets/img/slider/keksogram-mobile.webp";
 import keksogramWebp2Mobile from "../assets/img/slider/keksogram-mobile_2x.webp";
+import { Fade } from "react-awesome-reveal";
 
 export function Slider() {
 	return (
 		<SliderContainer>
 			<List>
 				<Item>
-					<picture>
-						<source
-							media="(max-width: 375px)"
-							type="image/webp"
-							srcSet={`${keksogramWebpMobile} 1x, ${keksogramWebp2Mobile} 2x`}
-						/>
-						<source
-							media="(max-width: 375px)"
-							srcSet={`${keksogramJpgMobile} 1x, ${keksogramJpg2Mobile} 2x`}
-						/>
-						<source
-							type="image/webp"
-							srcSet={`${keksogramWebp} 1x, ${keksogramWebp2} 2x`}
-						/>
+					<Fade triggerOnce delay={500}>
+						<picture>
+							<source
+								media="(max-width: 375px)"
+								type="image/webp"
+								srcSet={`${keksogramWebpMobile} 1x, ${keksogramWebp2Mobile} 2x`}
+							/>
+							<source
+								media="(max-width: 375px)"
+								srcSet={`${keksogramJpgMobile} 1x, ${keksogramJpg2Mobile} 2x`}
+							/>
+							<source
+								type="image/webp"
+								srcSet={`${keksogramWebp} 1x, ${keksogramWebp2} 2x`}
+							/>
 
-						<img
-							src={keksogram}
-							srcSet={`${keksogramJpg2} 2x`}
-							alt=""
-							loading="lazy"
-						/>
-					</picture>
-
-					<ItemWrapper>
-						<h3>Keksogram</h3>
-						<p>Как Instagram. Только Keksogram и десктопное приложение</p>
-						<dl>
-							<dt>Стек:</dt>
-							<dd>HTML, CSS, JS, Gulp, Webpack</dd>
-						</dl>
-						<dl>
-							<dt>Функционал:</dt>
-							<dd>
-								Загрузка фотографий, рандомный показ публикаций, генерация
-								рандомного числа лайков и&nbsp;комментариев + подгрузка этого
-								числа комментариев в&nbsp;публикации, наложение фильтров
-								на&nbsp;фотографию, валидация формы, добавление новых
-								комментариев под фото.
-							</dd>
-						</dl>
-						<Link href={"#"}>GitHub</Link>
-					</ItemWrapper>
+							<img
+								src={keksogram}
+								srcSet={`${keksogramJpg2} 2x`}
+								alt=""
+								loading="lazy"
+							/>
+						</picture>
+					</Fade>
+					<Fade direction="up" delay={500} triggerOnce>
+						<ItemWrapper>
+							<h3>Keksogram</h3>
+							<p>Как Instagram. Только Keksogram и десктопное приложение</p>
+							<dl>
+								<dt>Стек:</dt>
+								<dd>HTML, CSS, JS, Gulp, Webpack</dd>
+							</dl>
+							<dl>
+								<dt>Функционал:</dt>
+								<dd>
+									Загрузка фотографий, рандомный показ публикаций, генерация
+									рандомного числа лайков и&nbsp;комментариев + подгрузка этого
+									числа комментариев в&nbsp;публикации, наложение фильтров
+									на&nbsp;фотографию, валидация формы, добавление новых
+									комментариев под фото.
+								</dd>
+							</dl>
+							<Fade direction="right" delay={1200} triggerOnce>
+								<Link href={"#"}>GitHub</Link>
+							</Fade>
+						</ItemWrapper>
+					</Fade>
 				</Item>
 			</List>
 		</SliderContainer>
@@ -92,7 +98,7 @@ const ItemWrapper = styled.div`
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(2, auto);
 	grid-auto-rows: auto;
-	gap: 1.5rem 1rem;
+	gap: 1.5rem min(38px, calc(3px + 35 * (100vw - 768px) / 672));
 	font-size: 0.8rem;
 
 	& h3 {
@@ -139,7 +145,7 @@ const ItemWrapper = styled.div`
 		line-height: 1rem;
 	}
 
-	& a {
+	& div {
 		grid-column: 6/7;
 		grid-row: 1/2;
 		align-self: self-start;

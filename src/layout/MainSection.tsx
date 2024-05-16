@@ -1,24 +1,26 @@
-
 import styled from "styled-components";
 import { Container } from "../components/Container";
 import mainPhoto from "../assets/img/photo-main.png";
 import mainPhotoWebp2x from "../assets/img/photo-main_2x.webp";
 import mainPhotoWebp from "../assets/img/photo-main.webp";
 import { MainInscription } from "../components/MainInscription";
+import { Fade } from "react-awesome-reveal";
 
 export function MainSection() {
 	return (
 		<Section>
 			<MainContainer>
 				<TextWrapper>
-					<span>
-						<MainInscription>
-							<span>ПРИВЕТ</span>, Я&nbsp;АРСЕНИЙ
-						</MainInscription>
-					</span>
-					<h1>
-						Frontend-разработчик <br /> из Санкт-Петербурга
-					</h1>
+					<Fade direction={"down"} delay={500} triggerOnce>
+						<p>
+							<MainInscription>
+								<span>ПРИВЕТ</span>, Я&nbsp;АРСЕНИЙ
+							</MainInscription>
+						</p>
+						<h1>
+							Frontend-разработчик <br /> из Санкт-Петербурга
+						</h1>
+					</Fade>
 				</TextWrapper>
 			</MainContainer>
 		</Section>
@@ -64,11 +66,12 @@ const TextWrapper = styled.div`
 	gap: 1.25rem;
 	padding-bottom: 2.5rem;
 
-	& span {
+	& p {
+
 		text-align: center;
 	}
 
-	& > h1 {
+	& h1 {
 		font-size: 1.25rem;
 		line-height: 125%;
 		text-align: end;
@@ -87,10 +90,15 @@ const TextWrapper = styled.div`
 			text-align: center;
 			padding-right: 0;
 		}
+
 		@media (max-width: 375px) {
 			font-size: 17px;
 		}
 	}
+
+	/* @media (max-width: 768px) {
+			align-items: center;
+		} */
 
 	@media (max-width: 375px) {
 		padding-bottom: 30px;

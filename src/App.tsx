@@ -11,6 +11,7 @@ import { Projects } from "./layout/Projects";
 import { About } from "./layout/About";
 import { Contacts } from "./layout/Contacts";
 
+
 export function App() {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 	const [scroll, setscroll] = useState<boolean>(false);
@@ -67,10 +68,13 @@ export function App() {
 	return (
 		<>
 			<GlobalStyles menuOpen={menuOpen} />
-			<BurgerButton setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+			
+				<BurgerButton setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+			
 			<MenuMobile menuOpen={menuOpen} />
 			<Wrapper id="wrapper">
 				<Header />
+
 				<main>
 					<MainSection />
 					<Tools />

@@ -6,41 +6,46 @@ import mobile from "../assets/img/svg/mobile.svg";
 import telegram from "../assets/img/svg/telegram.svg";
 import letter from "../assets/img/svg/letter.svg";
 import github from "../assets/img/svg/github.svg";
+import { Fade } from "react-awesome-reveal";
 
 export function Contacts() {
 	return (
 		<Section id="contacts">
 			<ContactsContainer>
-				<h2>
-					<MainInscription>
-						<span>СВЯЗАТЬСЯ</span> СО&nbsp;МНОЙ
-					</MainInscription>
-				</h2>
-				<List>
-					<ListItem aria-label="по телефону">
-						<a href="tel: +79253647813">
-							<SpanHidden>Телефон</SpanHidden>+ 7 (952) 245-49-49
-						</a>
-					</ListItem>
-					<ListItem aria-label="в телеграме">
-						<a href="##" target="blank">
-							<SpanHidden>Телеграм</SpanHidden>
-							@Ars4112
-						</a>
-					</ListItem>
-					<ListItem aria-label="по электронной почте">
-						<a href="mailto: ars4112@gmail.com">
-							<SpanHidden>Электронная почта</SpanHidden>
-							ars4112@gmail.com
-						</a>
-					</ListItem>
-					<ListItem aria-label="гитхаб">
-						<a href="https://github.com/Ars4112" target="blank">
-							<SpanHidden>Гитхаб</SpanHidden>
-							Ars4112
-						</a>
-					</ListItem>
-				</List>
+				<Fade direction="up" triggerOnce>
+					<h2>
+						<MainInscription>
+							<span>СВЯЗАТЬСЯ</span> СО&nbsp;МНОЙ
+						</MainInscription>
+					</h2>
+				</Fade>
+				<Fade delay={700} triggerOnce>
+					<List>
+						<ListItem aria-label="по телефону">
+							<a href="tel: +79253647813">
+								<SpanHidden>Телефон</SpanHidden>+ 7 (952) 245-49-49
+							</a>
+						</ListItem>
+						<ListItem aria-label="в телеграме">
+							<a href="##" target="blank">
+								<SpanHidden>Телеграм</SpanHidden>
+								@Ars4112
+							</a>
+						</ListItem>
+						<ListItem aria-label="по электронной почте">
+							<a href="mailto: ars4112@gmail.com">
+								<SpanHidden>Электронная почта</SpanHidden>
+								ars4112@gmail.com
+							</a>
+						</ListItem>
+						<ListItem aria-label="гитхаб">
+							<a href="https://github.com/Ars4112" target="blank">
+								<SpanHidden>Гитхаб</SpanHidden>
+								Ars4112
+							</a>
+						</ListItem>
+					</List>
+				</Fade>
 			</ContactsContainer>
 		</Section>
 	);

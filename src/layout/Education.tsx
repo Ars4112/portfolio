@@ -1,79 +1,81 @@
 import styled from "styled-components";
-
+import { Fade } from "react-awesome-reveal";
 import photo from "../assets/img/photo-2.jpg";
 
 export function Education() {
 	return (
-		<EducationContainer>
-			<img
-				src={photo}
-				alt="Нафоне картины Бенкси"
-				width={"290"}
-				height={"301"}
-			/>
+		<Fade direction="left" triggerOnce>
+			<EducationContainer>
+				<img
+					src={photo}
+					alt="Нафоне картины Бенкси"
+					width={"290"}
+					height={"301"}
+				/>
 
-			<Wrapper>
-				<h3>Образование</h3>
-				<Table>
-					<thead>
-						<tr>
-							<th>2021-2022 </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>HTML ACADEMY</td>
-							<td>“Профессия Frontend разработчик”</td>
-						</tr>
-					</tbody>
-					<thead>
-						<tr>
-							<th>2023</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Самостоятельное обучение</td>
-							<td>React и TypeScript</td>
-						</tr>
-					</tbody>
+				<Wrapper>
+					<h3>Образование</h3>
+					<Table>
+						<thead>
+							<tr>
+								<th>2021-2022 </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>HTML ACADEMY</td>
+								<td>“Профессия Frontend разработчик”</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<th>2023</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Самостоятельное обучение</td>
+								<td>React и TypeScript</td>
+							</tr>
+						</tbody>
 
-					<thead>
-						<tr>
-							<th>2024</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>IT-Kamasutra</td>
-							<td>“Frontend разработчик”</td>
-						</tr>
-					</tbody>
-				</Table>
-				<p>
-					<span>
-						Я&nbsp;обладаю богатым профессиональным опытом, пробовал себя
-						в&nbsp;разных сферах. Когда-то учился на&nbsp;медбрата, работал
-						ассистентом стоматолога, фитнес-инструктором, администратором,
-						служил в&nbsp;МЧС и&nbsp;был сварщиком на&nbsp;производствах
-						и&nbsp;в&nbsp;строительстве. Этот опыт позволяет мне понимать
-						&laquo;внутреннюю кухню&raquo; в&nbsp;разных сферах&nbsp;&mdash; что
-						позволяет мне лучше понимать бизнес-потребность заказчика.
-					</span>
+						<thead>
+							<tr>
+								<th>2024</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>IT-Kamasutra</td>
+								<td>“Frontend разработчик”</td>
+							</tr>
+						</tbody>
+					</Table>
+					<Fade cascade damping={0.2} delay={500} direction="up" triggerOnce>
+						<span>
+							Я&nbsp;обладаю богатым профессиональным опытом, пробовал себя
+							в&nbsp;разных сферах. Когда-то учился на&nbsp;медбрата, работал
+							ассистентом стоматолога, фитнес-инструктором, администратором,
+							служил в&nbsp;МЧС и&nbsp;был сварщиком на&nbsp;производствах
+							и&nbsp;в&nbsp;строительстве. Этот опыт позволяет мне понимать
+							&laquo;внутреннюю кухню&raquo; в&nbsp;разных сферах&nbsp;&mdash;
+							что позволяет мне лучше понимать бизнес-потребность заказчика.
+						</span>
 
-					<span>
-						Для меня важно расти профессионально и&nbsp;развиваться. Поэтому
-						я&nbsp;решил кардинально сменить сферу и&nbsp;начал самостоятельное
-						обучение frontend разработке.
-					</span>
+						<span>
+							Для меня важно расти профессионально и&nbsp;развиваться. Поэтому
+							я&nbsp;решил кардинально сменить сферу и&nbsp;начал
+							самостоятельное обучение frontend разработке.
+						</span>
 
-					<span>
-						Мне нравится видеть результаты своей работы и чувствовать себя
-						частью важного проекта, который помогает людям.
-					</span>
-				</p>
-			</Wrapper>
-		</EducationContainer>
+						<span>
+							Мне нравится видеть результаты своей работы и чувствовать себя
+							частью важного проекта, который помогает людям.
+						</span>
+					</Fade>
+				</Wrapper>
+			</EducationContainer>
+		</Fade>
 	);
 }
 

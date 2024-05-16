@@ -37,7 +37,7 @@ const MenuStyle = styled.div<{ menuOpen: boolean }>`
 
 		& ${Container} {
 			width: ${({ menuOpen }) => (menuOpen ? "100%" : "0")};
-           height: ${({ menuOpen }) => (menuOpen ? "100%" : "0")};
+           height: 100%;
 			opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
 			transition: ${({ menuOpen }) =>
 				menuOpen
