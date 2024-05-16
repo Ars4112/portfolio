@@ -1,27 +1,88 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Header } from "./components/Header";
-import { MainSection } from "./components/MainSection";
+import { BurgerButton } from "./components/BurgerButton";
+import { GoToTop } from "./components/GoToTop";
+import { MenuMobile } from "./components/MenuMobile";
+import { Header } from "./layout/Header";
+import { MainSection } from "./layout/MainSection";
 import { GlobalStyles } from "./styles/GlobalStyles";
+import { Tools } from "./layout/Tools";
+import { Projects } from "./layout/Projects";
+import { About } from "./layout/About";
+import { Contacts } from "./layout/Contacts";
 
 export function App() {
+	const [menuOpen, setMenuOpen] = useState<boolean>(false);
+	const [scroll, setscroll] = useState<boolean>(false);
+
+	const onScroll = () => {
+		const currentScrollpos = window.scrollY;
+		if (currentScrollpos > 300) {
+			setscroll(true);
+			return;
+		} else setscroll(false);
+	};
+
+	const preventPropagation = (evt: Event) => {
+		evt.stopPropagation();
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", onScroll);
+		const wrapper = document.querySelector("#wrapper");
+		const menuMobile = document.querySelector("#menuMobile");
+		const navLink = menuMobile?.querySelectorAll("nav a");
+
+		if (menuOpen) {
+			menuMobile?.removeEventListener("focus", preventPropagation, true);
+			menuMobile
+				?.querySelectorAll("button, a, input, textarea")
+				.forEach((i) => {
+					i.removeAttribute("tabIndex");
+				});
+			navLink?.forEach((i) => {
+				i.setAttribute("tabIndex", "0");
+				i.addEventListener("click", () => setMenuOpen(false));
+			});
+		} else {
+			wrapper?.removeEventListener("focus", preventPropagation, true);
+			wrapper?.querySelectorAll("button, a, input, textarea").forEach((i) => {
+				i.removeAttribute("tabIndex");
+			});
+			wrapper?.querySelectorAll("nav a").forEach((i) => {
+				i.setAttribute("tabIndex", "0");
+			});
+
+			menuMobile?.addEventListener("focus", preventPropagation, true);
+			menuMobile
+				?.querySelectorAll("button, a, input, textarea")
+				.forEach((i) => {
+					i.setAttribute("tabIndex", "-1");
+				});
+		}
+
+		return wrapper?.removeEventListener("focus", preventPropagation, true);
+	}, [menuOpen]);
+
 	return (
 		<>
-			<GlobalStyles />
-			<Wrapper>
+			<GlobalStyles menuOpen={menuOpen} />
+			<BurgerButton setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+			<MenuMobile menuOpen={menuOpen} />
+			<Wrapper id="wrapper">
 				<Header />
 				<main>
 					<MainSection />
-					<h2>dsadddadasdsa</h2>
-					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo cumque
-						pariatur et earum veniam culpa numquam, nemo, consequuntur, iusto
-						magni aut. Quibusdam rerum voluptatibus at voluptatem laudantium
-						alias nihil ducimus!
-					</p>
+					<Tools />
+					<Projects />
+					<About />
+					<Contacts />
 				</main>
-				<footer></footer>
+				<footer>
+					<p>© Copyright 2024. Made by Arseniy Lipin</p>
+				</footer>
 			</Wrapper>
+			{scroll && <GoToTop />}
 		</>
 	);
 }
@@ -34,19 +95,15 @@ const Wrapper = styled.div`
 	& header,
 	footer {
 		flex-shrink: 0;
-		height: 100px;
 	}
 
 	& main {
 		flex-grow: 1;
+	}
 
-		& p {
-			font-family: "Noto Sans", sans-serif;
-			font-weight: 400;
-			font-size: 1.06rem;
-			line-height: 129%;
-			text-align: center;
-			color: #272526;
-		}
+	footer {
+		display: flex;
+		justify-content: center;
+		padding: min(75px, calc(50px + 25 * (100vw - 768px) / 672)) 0 35px;
 	}
 `;
