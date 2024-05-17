@@ -7,6 +7,7 @@ import telegram from "../assets/img/svg/telegram.svg";
 import letter from "../assets/img/svg/letter.svg";
 import github from "../assets/img/svg/github.svg";
 import { Fade } from "react-awesome-reveal";
+import { Form } from "./Form";
 
 export function Contacts() {
 	return (
@@ -46,6 +47,7 @@ export function Contacts() {
 						</ListItem>
 					</List>
 				</Fade>
+				<Form/>
 			</ContactsContainer>
 		</Section>
 	);

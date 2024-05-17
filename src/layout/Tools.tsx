@@ -87,8 +87,8 @@ export function Tools() {
 				<List>
 					{toolsListArray.map((i, index) => {
 						return (
-							<Fade cascade delay={index * 60} fraction={1} triggerOnce>
-								<ListItem key={i.id} title={i.spriteId}>
+							<Fade cascade delay={index * 60} fraction={1} triggerOnce key={i.id}>
+								<ListItem title={i.spriteId}>
 									<SpanHidden>{i.spriteId}</SpanHidden>
 									<Icons size="90" spriteId={i.spriteId} />
 								</ListItem>
