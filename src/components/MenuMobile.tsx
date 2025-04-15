@@ -21,7 +21,7 @@ const MenuStyle = styled.div<{ menuOpen: boolean }>`
 		position: fixed;
 		left: 0;
 		right: 0;
-        z-index: 1;
+        z-index: 3;
 		height: 100vh;
 		background-color: #dbba8f;
 		padding-top: 3.25rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MainInscription } from "../components/MainInscription";
 import { Container } from "../components/Container";
-import { Slider } from "./Slider";
+import { Slider } from "./slider/Slider";
 import { Link } from "../components/Link";
 import { Fade } from "react-awesome-reveal";
 
@@ -41,7 +41,7 @@ const SectionContainer = styled(Container)`
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	gap: 5.25rem;
+	gap: 3.25rem;
 
 	& h2 {
 		align-self: flex-start;

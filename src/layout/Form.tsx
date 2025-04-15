@@ -20,7 +20,7 @@ export function Form() {
 					() => {
 						console.log("SUCCESS!");
 						setMessageSentSuccessfully(true);
-                        setMessageSentError(false);
+						setMessageSentError(false);
 						e.target.reset();
 					},
 					(error) => {
@@ -31,6 +31,24 @@ export function Form() {
 				);
 		}
 	};
+
+    let users = ['dimych', 'valera', 'artem', 'katya']
+    yo();
+    if (users.length > 4) {
+        yo();
+    } else {
+    }
+    if (users.length < 2 || window !== null) {
+        yo()
+    }
+    for (let i=0;i<1;i++) {
+        yo()
+    }
+    function yo(){
+
+        console.log(1);
+        
+    }
 
 	return (
 		<FormStyle ref={form} onSubmit={sendEmail}>
