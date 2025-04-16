@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.js": "/static/js/main.b331cf21.js",
+    "static/js/787.25eaef86.chunk.js": "/static/js/787.25eaef86.chunk.js",
+    "static/media/DelaGothicOne-Regular.ttf": "/static/media/DelaGothicOne-Regular.a8761c8c6d54ccaa44db.ttf",
+    "static/media/DelaGothicOne-Regular.woff2": "/static/media/DelaGothicOne-Regular.deb651b65ed4925d6f43.woff2",
+    "static/media/NotoSans_Condensed-SemiBold.ttf": "/static/media/NotoSans_Condensed-SemiBold.b9069250087286833856.ttf",
+    "static/media/NotoSans_Condensed-Regular.ttf": "/static/media/NotoSans_Condensed-Regular.29df37a49627efaf24eb.ttf",
+    "static/media/photo-main_2x.webp": "/static/media/photo-main_2x.6c1e966a36a8ef4e431b.webp",
+    "static/media/photo-main.png": "/static/media/photo-main.a9dae15ddf92174dfdd9.png",
+    "static/media/photo-main.webp": "/static/media/photo-main.2769b2972bc4a2dfb502.webp",
+    "static/media/NotoSansCondensed-SemiBold.woff2": "/static/media/NotoSansCondensed-SemiBold.d58d46784c604c8b1e87.woff2",
+    "static/media/NotoSansCondensed-Regular.woff2": "/static/media/NotoSansCondensed-Regular.c94256ac5e5cb9bf38b2.woff2",
+    "static/media/keksogram-mobile_2x.webp": "/static/media/keksogram-mobile_2x.7e7fa0eba3f83bbd0f09.webp",
+    "static/media/keksogram@2x.jpg": "/static/media/keksogram@2x.69f0ba6f09ee811ee057.jpg",
+    "static/media/keksogram.jpg": "/static/media/keksogram.51012c97b75827bc0e91.jpg",
+    "static/media/keksogram.webp": "/static/media/keksogram.a120b8871351f06c99f0.webp",
+    "static/media/keksogram_2x.webp": "/static/media/keksogram_2x.bd393b362d15730b12a9.webp",
+    "static/media/keksogram-mobile@2x.jpg": "/static/media/keksogram-mobile@2x.23ae6992db222da4eb7e.jpg",
+    "static/media/photo-1.jpg": "/static/media/photo-1.73d3ca6d4038a55e2a5a.jpg",
+    "static/media/keksogram-mobile.jpg": "/static/media/keksogram-mobile.dfb2da8efa13bca24703.jpg",
+    "static/media/keksogram-mobile.webp": "/static/media/keksogram-mobile.1b65b247bffd9b7d7c50.webp",
+    "static/media/sprite.svg": "/static/media/sprite.22f0a50d03046a90fb6c80f31d076916.svg",
+    "static/media/photo-2.jpg": "/static/media/photo-2.a545f3e303c2683efed9.jpg",
+    "static/media/github.svg": "/static/media/github.0214263fb17ba173dc8c5a0d0b0797a2.svg",
+    "static/media/telegram.svg": "/static/media/telegram.a72bdba3a213d11db7c671726a57b772.svg",
+    "static/media/mobile.svg": "/static/media/mobile.1f4ddde4375922d269e2b2b258f117a1.svg",
+    "static/media/letter.svg": "/static/media/letter.455e76a8a6407a224d0f5623428aa547.svg",
+    "index.html": "/index.html",
+    "main.b331cf21.js.map": "/static/js/main.b331cf21.js.map",
+    "787.25eaef86.chunk.js.map": "/static/js/787.25eaef86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b331cf21.js"
+  ]
+}
